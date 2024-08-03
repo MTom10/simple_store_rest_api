@@ -1,0 +1,25 @@
+pip install -r requirements.txt
+flask run
+
+Rest API usually works with Json:
+can contain strings, numbers, booleans, lists, objects,
+"key": "value"
+
+On the top of Json can have list [] or object
+Can't be string or number - not valid Json
+
+Flasks turns lists or dicts into Json automatically
+Json  can be prettified (strips brackets etc...), API usually returns not-prettified
+
+POSTMAN interact with our API - able to  send requests, generate payload etc. E
+asy for making post requests, forging data etc...
+
+POSTMAN AGENT - for windows, mac, linux
+
+### Docker compose:
+#   building docker
+docker compose up
+
+#   rebuilding docker service
+docker compose up --build --force-recreate --no-deps <service_name>
+.flaskenv - when dotenv installed , runing flask will load the config .flaskenv

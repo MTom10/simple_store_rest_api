@@ -16,4 +16,4 @@ copy . .
 # what commands to run when the image starts up in the container
 # CMD ["flask", "run", "--host", "0.0.0.0"]
 
-CMD ["gunicorn", "--bind", "0.0.0.0:80", "app:create_app()"]
+CMD ["/bin/bash", "docker-entrypoint.sh"]

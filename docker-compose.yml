@@ -1,0 +1,24 @@
+# for local development only as we store passwords here etc
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:80"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    env_file:
+      - ./.env
+
+  # create the docker image od db:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=myapp
+    volumes:
+      - postgres_data:/car/lib/postgresql/data
+volumes:
+  postgres_data:

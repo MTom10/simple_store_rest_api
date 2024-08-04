@@ -10,6 +10,7 @@ from db import db
 from blocklist import BLOCKLIST
 import models
 from flask_migrate import Migrate
+from dotenv import load_dotenv
 
 from resources.item import blp as ItemBlueprint
 from resources.store import blp as StoreBlueprint
@@ -21,6 +22,8 @@ from resources.user import blp as UserBlueprint
 def create_app(db_url=None):
     # create flask  app, able to run the app, flask looks inside the folder for var called app
     app = Flask(__name__)
+    # load and run dotenv
+    load_dotenv()
 
     # register blueprints with API
     # if there is exception in flask, let's see it
